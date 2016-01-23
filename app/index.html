@@ -21,13 +21,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- Place favicon.ico in the `app/` directory -->
 
   <!-- Chrome for Android theme color -->
-  <meta name="theme-color" content="#F9A669">
+  <meta name="theme-color" content="#2E3AA1">
 
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
 
   <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="#F9A669">
+  <meta name="msapplication-TileColor" content="#3372DF">
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -69,8 +69,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
-        <iron-icon icon="pets"></iron-icon>
-          <span class="menu-name">J's blogg</span>
+          <span class="menu-name">Menu</span>
         </paper-toolbar>
 
         <!-- Drawer Content -->
@@ -80,21 +79,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="Resume" href="{{baseUrl}}Resume">
-            <iron-icon icon="star"></iron-icon>
-            <span>Resume</span>
-          </a>
-
-          <a data-route="Portfolio" href="{{baseUrl}}Portfolio">
+          <a data-route="users" href="{{baseUrl}}users">
             <iron-icon icon="info"></iron-icon>
-            <span>Portfolio</span>
+            <span>Users</span>
           </a>
 
           <a data-route="contact" href="{{baseUrl}}contact">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
-
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -109,31 +102,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <!-- Toolbar icons -->
           <paper-icon-button icon="refresh"></paper-icon-button>
           <paper-icon-button icon="search"></paper-icon-button>
-          <wj-login></wj-login>
-          <!-- Application name -->
 
-            
-           <head>
-           <style>
-           p.serif {
-              font-family: "Times New Roman" Times, serif;
-              }
-               p.sansserif {
-              font-family: Arial, Helvetica, sans-serif;
-            }
-            </style>
-              </head>
-             <body>
+          <!-- Application name -->
           <div class="middle middle-container">
-            <div class="app-name"><p class="sansserif">J's Automotive Blogg</p>
-           </body>
-           </html>
-         </div>
+            <div class="app-name">Polymer Starter Kit</div>
           </div>
 
           <!-- Application sub title -->
           <div class="bottom bottom-container">
-            <div class="bottom-title">Up-to-date opened information of Automobile :)</div>
+            <div class="bottom-title">The future of the web today</div>
           </div>
         </paper-toolbar>
 
@@ -142,76 +119,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home">
               <paper-material elevation="1">
-            <p>Welcome! <br>
-            This blog is all about Automobile </p>
+                <my-greeting></my-greeting>
+
+                <p class="subhead">You now have:</p>
+                <my-list></my-list>
+
+                <p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
+              </paper-material>
+
+              <paper-material elevation="1">
+                <p>This is another card.</p>
+              </paper-material>
+
+              <paper-material elevation="1">
+                <h1 id="license">License</h1>
+                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
+                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
+                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+                <ul>
+                <li>Redistributions of source code must retain the above copyright
+                notice, this list of conditions and the following disclaimer.</li>
+                <li>Redistributions in binary form must reproduce the above
+                copyright notice, this list of conditions and the following disclaimer
+                in the documentation and/or other materials provided with the
+                distribution.</li>
+                <li>Neither the name of Google Inc. nor the names of its
+                contributors may be used to endorse or promote products derived from
+                this software without specific prior written permission.</li>
+                </ul>
+                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+              </paper-material>
+            </section>
+
+            <section data-route="users">
+              <paper-material elevation="1">
+                <h2 class="page-title">Users</h2>
+                <p>This is the users section</p>
+                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
+                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
+                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
+                <a href$="{{baseUrl}}users/Sam">Sam</a>
+              </paper-material>
+            </section>
+
+            <section data-route="user-info">
+              <paper-material elevation="1">
+                <h2 class="page-title">User: {{params.name}}</h2>
+                <div>This is {{params.name}}'s section</div>
+              </paper-material>
             </section>
 
             <section data-route="contact">
               <paper-material elevation="1">
-                <p> <b>Woojin Park</b> </p>
-                <p>+82)10-6639-0706</p>
-                wjin6846@gmail.com
-              </paper-material>
-            </section>
-
-            <section data-route="Portfolio">
-              <paper-material elevation="1">
-                <p> ww</p>
-              </paper-material>
-            </section>
-
-
-                        <section data-route="Resume">
-              <paper-material elevation="1">
-              
-         <p> <b>Woojin Park</b> <br> 
-           wjin6846@gmail.com
-           <br>
-          650-924-7774<br><br>
-
-          <b>Summary</b> <br><br>
-Mechanical design engineer who works effectively in a fast-paced and rapidly changing environment. <br>Having high skills of taking coarse descriptions of issues and turning them into crisp problem definitions with actionable plans to work toward solutions. Enthusiastic for achievement and Working ongoing with other team-mate to keep the modules stable and reliable.<br><br>
-
-<b>Speciality</b><br><br>
-• In depth understanding of vehicle driven system<br>
-• Expertise in creating and managing complex hardware-software systems <br>
-• System-oriented understanding of thermal, vehicle-level torque control, high voltage DC-link integration, efficiency optimization, and firmware integration for electric drives<br>
-• Strong communication and preference for working in teams<br><br>
-
-<b>Skills</b><br><br>
-• Model development and data analysis in Matlab<br>
-• Proficiency in C++ software development<br>
-• Professional skills with CAD / CATIA V5<br><br>
-
-<b>Academic projects</b><br><br>
-• Electric Motor Controlling System (Nov 2015 – Dec 2015)<br>
-- Research motor driving with using Digital Signal Processor(DSP) and Actuator system for vehicle (EPS, XBW), Design prototype EMB controller.<br>
-• Intelligence Vehicle Research (Sep 2015 – Nov 2015)<br>
-- Navigation & Control of Autonomous Vehicle Systems – Analyzation autonomous robot and drones, realization of Simultaneous Localization and Mapping from automotive path making vehicle system.<br>
-- NMPC Based Decision Making Method - Research Decision Making Method for Collision Avoidance, simulate path prediction of the driver vehicle and analyze total sum of predicted distance error.<br>
-• Development technology of vehicle horn system with Vehicle to Vehicle(V2V) (Apr 2015 – Oct 2015)<br>
-- Research and decide problems of current vehicle horn system and developing with using futuristic technology V2V<br>
-- Idea prize at Kookmin University and Hanyang University<br><br>
-
-<b>Experience</b><br><br>
-• Internship at Ziontech – San Jose, CA (Jan 2016 – Feb 2016)<br>
-• Researching and Learning programming languages (Python, JavaScript, C++) and the principles of object-oriented development<br>
-• Gained ability to effective collaboration with teammates- front-end developers and web developers<br><br>
-
-<b>Languages</b><br><br>
-• Korean – Native speaker<br>
-• English – Fluent<br>
-• Chinese – Capable of communication<br><br>
-
-<b>Education</b><br>
-Kookmin University – Seoul, Korea (Jan. 2017)<br>
-B.S of Automobile Engineering<br><br>
-
-<b>Additional Information</b><br>
-Military service – Wonju, Korea (Feb. 2013 – Nov. 2014)
-
-             </p>
-               
+                <h2 class="page-title">Contact</h2>
+                <p>This is the contact section</p>
               </paper-material>
             </section>
           </iron-pages>
